@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../../components/Layout';
-import Article from './Article'
+import Article from '../../components/Article';
 import Head from 'next/head';
 import { useAppContext } from '../../context/state'
 import { Container, TextH1, Img } from '../../styles/styled/cart-styles';

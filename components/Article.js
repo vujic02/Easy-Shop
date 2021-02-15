@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import {Container, TextP, TextH1, Button, Img, QuantityButton} from '../../styles/styled/cart-styles';
-import { useAppContext } from '../../context/state'
+import React from 'react';
+import {Container, TextP, TextH1, Button, Img, QuantityButton} from '../styles/styled/cart-styles';
+import { useAppContext } from '../context/state'
 
 const Article = ({article}) => {
 

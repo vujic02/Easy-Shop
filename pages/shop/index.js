@@ -3,7 +3,7 @@ import { Button, Container, Grid, ImgContainer, RecentlyAdded, Page, TextH1, Tex
 import Head from 'next/head';
 import Layout from '../../components/Layout';
 import Link from 'next/link';
-import Item from './Item';
+import Item from '../../components/Item';
 
 
 const Shop = ({items}) => {

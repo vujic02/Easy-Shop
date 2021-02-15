@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { TextP, Container, CardImg } from '../../styles/styled/shop-styles'
+import { TextP, Container, CardImg } from '../styles/styled/shop-styles'
 
 const Item = ({imgSrc, itemName, itemPrice, id}) => {
 
