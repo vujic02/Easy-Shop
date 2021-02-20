@@ -17,8 +17,6 @@ export default function Home() {
 
   const {articles, setArticles} = useAppContext()
 
-  console.log(articles)
-
   return (
     <Layout>
       <HomePage>

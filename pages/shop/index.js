@@ -8,8 +8,6 @@ import Item from '../../components/Item';
 
 const Shop = ({items}) => {
 
-    console.log(items[0].id)
-
     useEffect(() => {
         document.body.style.overflowX = "hidden";
         document.querySelector('.navbar').style.marginTop = "-90px";
@@ -30,7 +28,7 @@ const Shop = ({items}) => {
                                 <TextH1 fontS="3.2rem" fontW="700" p=".5rem 0" col="var(--white)">Exclusive suits for men.</TextH1>
                                 <TextP fontS="2rem" fontW="200" p=".5rem 0" col="var(--white)">The clothes don't suit a <br/>man, the man suits <br/> the clothes. </TextP>
                                 <Grid>
-                                    <Button bg="var(--brickOrange)" fontS="1.9rem" fontW="300" p=".7rem .5rem" m="0 1rem 0 0" col="var(--white)" bgHover="var(--white)" colHover="var(--brickOrange)" mM="0 10% 1% 0" mM2="0 1% 1% 0"><Link href="/shop">Purchase Suits</Link></Button>
+                                    <Button bg="var(--brickOrange)" fontS="1.9rem" fontW="300" p=".7rem .5rem" m="0 1rem 0 0" col="var(--white)" bgHover="var(--white)" colHover="var(--brickOrange)" mM="0 10% 1% 0" mM2="0 1% 1% 0"><Link href="/suits">Purchase Suits</Link></Button>
                                     <Button bg="var(--white)" fontS="1.9rem" fontW="300" p=".7rem .5rem" col="var(--brickOrange)" bgHover="var(--brickOrange)" colHover="var(--white)" mM="0 10% 1% 0" mM2="0 1% 1% 0"><Link href="/shop">Browse Products</Link></Button>
                                 </Grid>
                             </Container>

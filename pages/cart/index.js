@@ -2,15 +2,13 @@ import React from 'react'
 import Layout from '../../components/Layout';
 import Article from '../../components/Article';
 import Head from 'next/head';
+import Link from 'next/link'
 import { useAppContext } from '../../context/state'
-import { Container, TextH1, Img } from '../../styles/styled/cart-styles';
+import { Container, TextH1, Img, Button, ArrowRight } from '../../styles/styled/cart-styles';
 
 const Cart = () => {
 
     const {articles, setArticles} = useAppContext();
-
-    console.log(articles, "cart page")
-
 
     return (
         <Layout>
@@ -20,12 +18,19 @@ const Cart = () => {
         </Head>
 
         {articles.length > 0 ?  (
+            <>
             <Container shadow="0 8px 32px 0 rgba( 31, 38, 135, 0.37 )" bFilter="backdrop-filter: blur( 4px )" borR="10px" m="5%" bg="var(--whiteFaded)" flexDir="column" justify="space-between" align="flex-start" h="100%" p="2%">
-                <TextH1 fontS="2rem" fontSM="1.5rem" fontW="400" align="center" p="0" pM="2% 0 0 0">My shopping cart ({articles.length} Items)</TextH1>
+                <Container w="100%" h="100%" flexDir="row" justify="space-between" p="0 2% 0 0">
+                    <TextH1 fontS="2rem" fontSM="1.5rem" fontW="400" align="center" p="0" pM="2% 0 0 0">My shopping cart ({articles.length} Items)</TextH1>
+                        <Container>
+                            <Button p="2% 3%" fontS="1.5rem" fontW="500" flexDir="row" justify="center" align="center" col="var(--brickOrange)" bg="transparent"  colH="var(--black)"><Link href="/checkout">Checkout</Link><ArrowRight /></Button>
+                        </Container>
+                </Container>
                 {articles.map((article, idx) => (
                     <Article key={idx} article={article}/>
                 ))}
         </Container>
+        </>
         ) : (
             <Container flexDir="column" justify="center" align="center" h="100vh" w="100%">
                 <Img src="./images/cartSvg.svg" w="60%" h="60%" wM="80%" hM="60%" />

@@ -34,11 +34,11 @@ export const Nav = styled.nav`
 
   export const  NavLinks = styled.ul`
         list-style: none;
-        width: calc(100% / 3.5);
+        width: calc(100% / 3);
         display: flex;
         justify-content: space-around;
         @media screen and (max-width: 1300px) {
-            width: calc(100% / 3);
+            width: calc(100% / 2.5);
         }
         @media screen and (max-width: 768px) {
             display: none;

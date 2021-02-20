@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {CgArrowLongRight} from 'react-icons/cg';
 
 export const Container = styled.div`
     display: flex;
@@ -29,7 +30,7 @@ export const Container = styled.div`
 `
 
 export const Button = styled.div`
-    display: block;
+    display: flex;
     flex-direction: ${({flexDir}) => flexDir};
     justify-content: ${({justify}) => justify};
     align-items: ${({align}) => align};
@@ -39,14 +40,25 @@ export const Button = styled.div`
     border: ${({bor}) => bor};
     font-size: ${({fontS}) => fontS};
     font-weight: ${({fontW}) => fontW};
-    color: ${({col}) => col};
     cursor: pointer;
+    color: ${({col}) => col};
+
+    a {
+        color: ${({col}) => col};
+        text-decoration: none;
+    }
 
     &:hover {
         transition: all ease-in-out 0.3s;
         background: ${({bgH}) => bgH};
         border: ${({borH}) => borH};
         color: ${({colH}) => colH};
+        a {
+            color: ${({colH}) => colH};
+        }
+        svg {
+            color: var(--black);
+        }
     }
 `
 
@@ -72,6 +84,10 @@ export const TextH1 = styled.h1`
     margin: ${({m}) => m};
     padding: ${({p}) => p};
 
+    @media screen and (max-width: 1200px) {
+        font-size: ${({fontXS}) => fontXS};
+    }
+
     @media screen and (max-width: 768px) {
         font-size: ${({fontSM}) => fontSM};
         margin: ${({mM}) => mM};
@@ -84,6 +100,7 @@ export const Img = styled.img`
     height: ${({h}) => h};
     object-fit: ${({objF}) => objF};
     object-position: ${({objP}) => objP};
+    border: ${({bor}) => bor};
 
     @media screen and (max-width: 768px) {
         width: ${({wM}) => wM};
@@ -99,3 +116,45 @@ export const QuantityButton = styled.div`
     width: ${({w}) => w};
     line-height: ${({lineH}) => lineH};
 `
+
+export const ArrowRight = styled(CgArrowLongRight)`
+    width: 30px;
+    height: 30px;
+    color: var(--brickOrange);
+    margin-top: 5px;
+    margin-left: 5px;
+`
+
+
+export const Card = styled.div`
+  position: relative;
+  width: 500px;
+  height: 300px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  @media screen and (max-width: 550px) {
+      width: 100%;
+  }
+`
+
+export const Face = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transform-style: preserve-3d;
+  transition: 1s;
+  backface-visibility: hidden;
+`
+export const FaceFront = styled(Face)`
+  transform: ${(props) => (!props.rotateCard ? `rotateY(180deg)` : "")};
+`;
+export const FaceBack = styled(Face)`
+  transform: ${(props) =>
+    props.rotateCard ? `rotateY(180deg)` : "rotateY(360deg)"};
+`;

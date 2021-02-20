@@ -23,15 +23,20 @@ const Article = ({item}) => {
         document.querySelector('.navbar').style.marginTop = "-90px";
     }, [])
 
+    let arr = ["hello" , "hello", "hello", "hi"]
 
     console.log(articles);
 
      
     const addToCart = () => {
-        const items = articles.slice();
-        if(!items.includes(item)) {
-            setArticles([...articles, {item, count: 1}]);
+        let items = articles.slice();
+        let index = item.id;
+        for(let i = 0; i < articles.length; i++) {
+            if(articles[i].item.id === index) {
+                items.splice(i, 1)
+            }
         }
+        setArticles([...items, {item, count: 1}])
     }
 
 
