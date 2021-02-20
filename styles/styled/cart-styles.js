@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {CgArrowLongRight} from 'react-icons/cg';
+import {AiOutlineClose} from 'react-icons/ai';
 
 export const Container = styled.div`
     display: flex;
@@ -13,18 +14,22 @@ export const Container = styled.div`
     border-radius: ${({borR}) => borR};
     width: ${({w}) => w};
     height: ${({h}) => h};
+    position: ${({pos}) => pos};
     background-position: center top;
     background-size: ${({bgSize}) => bgSize};
     flex: ${({flexNum}) => flexNum};
     cursor: ${({cur}) => cur};
     box-shadow: ${({shadow}) => shadow};
     backdrop-filter: ${({bFilter}) => bFilter};
+    align-self: ${({selfAlign}) => selfAlign};
+    justify-self: ${({justifyAlign}) => justifyAlign};
 
     @media screen and (max-width: 1250px) {
         flex-direction: ${({flexDirM}) => flexDirM};
         padding: ${({pM}) => pM};
         width: ${({wM}) => wM};
         height: ${({hM}) => hM};
+        margin: ${({mM}) => mM};
     }
 
 `
@@ -45,7 +50,7 @@ export const Button = styled.div`
 
     a {
         color: ${({col}) => col};
-        text-decoration: none;
+        text-decoration: ${({decoration}) => decoration};
     }
 
     &:hover {
@@ -125,6 +130,20 @@ export const ArrowRight = styled(CgArrowLongRight)`
     margin-left: 5px;
 `
 
+export const Remove = styled(AiOutlineClose)`
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    color: var(--brickOrange);
+    cursor: pointer;
+    &:hover {
+        transition: all ease-in-out .3s;
+        color: var(--darkGray);
+    }
+`
+
 
 export const Card = styled.div`
   position: relative;
@@ -150,6 +169,17 @@ export const Face = styled.div`
   transform-style: preserve-3d;
   transition: 1s;
   backface-visibility: hidden;
+  &:hover {
+    .valid {
+      text-decoration: underline;
+    }
+    .number {
+      text-decoration: underline;
+    }
+    .ccv {
+      text-decoration: underline;
+    }
+  }
 `
 export const FaceFront = styled(Face)`
   transform: ${(props) => (!props.rotateCard ? `rotateY(180deg)` : "")};

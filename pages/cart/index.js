@@ -19,7 +19,7 @@ const Cart = () => {
 
         {articles.length > 0 ?  (
             <>
-            <Container shadow="0 8px 32px 0 rgba( 31, 38, 135, 0.37 )" bFilter="backdrop-filter: blur( 4px )" borR="10px" m="5%" bg="var(--whiteFaded)" flexDir="column" justify="space-between" align="flex-start" h="100%" p="2%">
+            <Container m="5%" flexDir="column" justify="space-between" align="flex-start" h="100%" p="2%">
                 <Container w="100%" h="100%" flexDir="row" justify="space-between" p="0 2% 0 0">
                     <TextH1 fontS="2rem" fontSM="1.5rem" fontW="400" align="center" p="0" pM="2% 0 0 0">My shopping cart ({articles.length} Items)</TextH1>
                         <Container>

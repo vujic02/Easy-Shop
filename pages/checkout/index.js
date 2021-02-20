@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import Layout from '../../components/Layout';
 import {useAppContext} from '../../context/state';
-import { TextH1, Container, Img, Card, FaceFront, FaceBack, TextP} from '../../styles/styled/cart-styles';
+import { TextH1, Container, Img, Card, FaceFront, FaceBack, TextP, Button} from '../../styles/styled/cart-styles';
 import Front from '../../components/Front'
 import Back from '../../components/Back'
 
@@ -66,8 +66,14 @@ const Checkout = () => {
 
                 </Container>
                 <Container flexNum="2" m="0 2% 2% 2%" flexDir="column" justify="space-around" align="flex-start" h="100%" p="2%">
-                    <Container>
+                    <Container flexDir="column" align-items="flex-start">
                         <TextH1 fontS="1.6rem" fontW="700" col="var(--darkGray)" m="1% 0 0 0">Checkout</TextH1>
+                        <TextH1 fontS="1rem" fontW="400" col="var(--darkGray)" m="2% 0 0 0">Enter your email adress. This will be used to send you order status updates.</TextH1>
+                    </Container>
+                    <Container flexDir="column">
+                        <input></input>
+                        <Button></Button>
+                        <TextH1 fontS="1rem" fontW="400" col="var(--darkGray)" m="2% 0 0 0">Tip: Click on the card to flip.</TextH1>
                     </Container>
                     <Container bg="linear-gradient(to right,var(--rustOrange), var(--lightBurgundy))" flexDir="column" align="center" h="100%" borR="15px" m="5% 0 0 0">
                         <Card>

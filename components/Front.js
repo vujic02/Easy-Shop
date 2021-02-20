@@ -6,18 +6,18 @@ export default function FrontSide() {
       <Debit>Debit Card</Debit>
       <Bank>VISA</Bank>
       <Chip src="/images/chip.png" />
-      <Number>0123 4567 8901 2345</Number>
+      <Number className="number">0123 4567 8901 2345</Number>
       <Valid>
         <span>
           Valid
           <br />
           thru
         </span>
-        <span>10/24</span>
+        <span className="valid">10/24</span>
       </Valid>
       <CardHold>Firstname Lastname</CardHold>
     </Front>
-  );
+  )
 }
 
 const Front = styled.div`
@@ -43,7 +43,7 @@ const Front = styled.div`
     border-radius: 50%;
     opacity: 0.7;
   }
-`;
+`
 
 const Debit = styled.h3`
   position: absolute;
@@ -51,7 +51,7 @@ const Debit = styled.h3`
   top: 30px;
   color: #fff;
   font-weight: 500;
-`;
+`
 
 const Bank = styled.h3`
   position: absolute;
@@ -61,7 +61,7 @@ const Bank = styled.h3`
   font-weight: 500;
   font-style: italic;
   font-size: 24px;
-`;
+`
 
 const Chip = styled.img`
   position: absolute;
@@ -79,7 +79,7 @@ const Number = styled.h3`
   font-size: 18px;
   text-shadow: 0 2px 1px #0005;
   font-family: "Orbitron", sans-serif;
-`;
+`
 
 const Valid = styled.h5`
   position: absolute;
@@ -99,7 +99,7 @@ const Valid = styled.h5`
     font-weight: 400;
     letter-spacing: 2px;
   }
-`;
+`
 
 const CardHold = styled.h5`
   position: absolute;
@@ -109,4 +109,4 @@ const CardHold = styled.h5`
   font-weight: 300;
   font-size: 16px;
   letter-spacing: 2px;
-`;
+`

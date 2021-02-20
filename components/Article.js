@@ -1,12 +1,10 @@
 import React from 'react';
-import {Container, TextP, TextH1, Button, Img, QuantityButton} from '../styles/styled/cart-styles';
+import {Container, TextP, TextH1, Button, Img, QuantityButton, Remove} from '../styles/styled/cart-styles';
 import { useAppContext } from '../context/state'
 
 const Article = ({article}) => {
 
     const {articles, setArticles} = useAppContext();
-
-    console.log(articles, "each article")
 
     const increment = () => {
         let items = articles;
@@ -59,7 +57,8 @@ const Article = ({article}) => {
             <Container flexDir="row" flexNum="1">
                 <Img src={article.item.headingImages} w="100%" h="100%" objF="cover" objP="center"/>
             </Container>
-            <Container flexDir="column" justify="center" p="0 0 0 5%" pM="0" flexNum="1">
+            <Container flexDir="column" justify="center" p="0 0 0 5%" pM="0" mM="5% 0 0 0" flexNum="1" pos="relative">
+                <Remove onClick={handleRemove} />
                 <TextH1 fontS="1.7rem" fontW="700" col="var(--brickOrange)" m="1% 0">{article.item.name}</TextH1>
                 <TextP fontS="1.2rem" fontW="400" col="var(--black)" m="1% 0">{article.item.description}</TextP>
                 <TextH1 fontS="1.6rem" fontW="700" col="var(--black)" m="1% 0">{article.item.price}€</TextH1>
@@ -76,11 +75,6 @@ const Article = ({article}) => {
                             <QuantityButton w="100%" onClick={increment}>+</QuantityButton>
                         </Container>
                     </Container>
-                </Container>
-                <Container>
-                    <Button onClick={handleRemove} m="2% 0" p="2% 5%" flexDir="row" justify="center" align="center" bg="var(--brickOrange)" bor="1px solid transparent" fontS="1.5rem" fontW="200" col="var(--white)" colH="var(--brickOrange)" bgH="transparent" borH="1px solid var(--brickOrange)">
-                        Remove from cart
-                    </Button>
                 </Container>
             </Container>
         </Container>

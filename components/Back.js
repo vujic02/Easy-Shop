@@ -7,7 +7,7 @@ export default function BackSide() {
       <CCV>
         <CCVText>Autorized Signature-not valid unless signed</CCVText>
         <WhiteBar />
-        <CCVNumber>123</CCVNumber>
+        <CCVNumber className="ccv">123</CCVNumber>
       </CCV>
       <Text>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a
