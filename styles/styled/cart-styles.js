@@ -43,10 +43,13 @@ export const Button = styled.div`
     margin: ${({m}) => m};
     background: ${({bg}) => bg};
     border: ${({bor}) => bor};
+    border-radius: ${({borR}) => borR};
     font-size: ${({fontS}) => fontS};
     font-weight: ${({fontW}) => fontW};
     cursor: pointer;
     color: ${({col}) => col};
+    width: ${({w}) => w};
+    height: ${({h}) => h};
 
     a {
         color: ${({col}) => col};
@@ -110,6 +113,23 @@ export const Img = styled.img`
     @media screen and (max-width: 768px) {
         width: ${({wM}) => wM};
         height: ${({hM}) => hM};
+    }
+`
+
+export const Input = styled.input`
+    width: ${({w}) => w};
+    height: ${({h}) => h};
+    background: ${({bg}) => bg};
+    border: ${({bor}) => bor};
+    border-radius: ${({borR}) => borR};
+    color: ${({col}) => col};
+    font-size: ${({fontS}) => fontS};
+    font-weight: ${({fontW}) => fontW};
+    text-align: ${({align}) => align};
+    margin: ${({m}) => m};
+    padding: ${({p}) => p};
+    &:focus {
+        outline: ${({outL}) => outL};
     }
 `
 
