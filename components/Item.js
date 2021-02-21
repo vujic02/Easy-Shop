@@ -9,7 +9,7 @@ const Item = ({imgSrc, itemName, itemPrice, id}) => {
         <Container flexDir="column" flexAlign="center" p="10% 0 0 0" style={{cursor: "pointer"}}>
             <CardImg src={imgSrc} alt="Image is not available, click on the article for more info" w="100%" h="350px" />
             <TextP fontS="2rem" fontW="300" alignText="center" p="2% 0 0 0">{itemName}</TextP>
-            <TextP fontS="1.5rem" fontW="600" alignText="center" p="1% 0 0 0">{itemPrice} €</TextP>
+            <TextP fontS="1.5rem" fontW="700" alignText="center" p="1% 0 0 0" col="var(--brickOrange)">{itemPrice} €</TextP>
         </Container>
     </Link>
     )

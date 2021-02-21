@@ -69,25 +69,28 @@ const Article = ({item}) => {
                 <title>Easy Shop | {item.name}</title>
             </Head>
 
-            <ImgContainer imgSrc={item.headingImages} w="100%" h="80vh"></ImgContainer>
 
         <SRLWrapper options={options}>
             <Grid p="10% 5%">
-                <Container flexDir="column" justify="space-around" bg="var(--whiteGray)" position="relative">
-                    <TextH1 fontS="2.5rem" fontW="700" col="var(--black)" p="20px 0 10px 10px">{item.name}</TextH1>
-                    <TextP fontS="1.5rem" fontW="300" col="var(--black)" p="10px 0 10px 10px">{item.description}</TextP>
-                    <TextH1 fontS="3rem" fontW="800" col="var(--black)" p="10px 0 10px 10px">{item.price}€</TextH1>
+                <Container flexDir="column" justify="space-around">
+                    {item.images && item.images.map((image, index) => (
+                        <img key={index} src={image} className="gallery-img" />
+                    ))}
+                </Container>
+                <ImgContainer imgSrc={item.headingImages} w="100%" h="47.8vh" m="1% 0 0 0"></ImgContainer>
+                <Container flexDir="column" justify="flex-start" position="relative">
+                    <TextH1 fontS="2.5rem" fontW="500" col="var(--black)" p="0 0 1rem 1rem">{item.name}</TextH1>
+                    <TextH1 fontS="2rem" fontW="800" col="var(--black)" p="1rem 0 1rem 1rem">{item.price}€</TextH1>
                     <Container>
-                        <ButtonSecondary bg="var(--brickOrange)" fontS="1.9rem" fontW="300" p=".7rem 1rem" m="10px 0 10px 10px" col="var(--white)" bor="1px solid transparent" bgHover="var(--white)" colHover="var(--brickOrange)" borHover="1px solid var(--brickOrange)" onClick={addToCart}>
+                        <ButtonSecondary bg="var(--brickOrange)" fontS="1.9rem" fontW="300" p=".7rem 1rem" m="1rem 0 1rem 1rem" col="var(--white)" bor="1px solid transparent" bgHover="var(--white)" colHover="var(--brickOrange)" borHover="1px solid var(--brickOrange)" onClick={addToCart}>
                             <a>Add to cart</a>
                             <Cart />
                         </ButtonSecondary>
                     </Container>
+                    <Container>
+                        <TextP fontS="1.2rem" fontW="300" col="var(--black)" p="1rem 0 1rem 1rem">{item.description}</TextP>
+                    </Container>
                 </Container>
-
-                    {item.images && item.images.map((image, index) => (
-                        <img key={index} src={image} className="gallery-img" />
-                    ))}
 
             </Grid>
             </SRLWrapper>

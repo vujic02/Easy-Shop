@@ -7,16 +7,17 @@ export const Page = styled.section`
 
 export const Grid = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: .5fr 1.5fr 1fr;
     padding: ${({p}) => p};
     gap: 20px;
 
     .gallery-img {
         width: 100%;
-        height: 420px;
+        height: 240px;
         object-fit: cover;
         object-position: center;
         cursor: pointer;
+        padding: 3% 0;
     }
 
     @media screen and (max-width: 1366px) {
