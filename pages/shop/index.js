@@ -27,7 +27,7 @@ const Shop = ({items}) => {
                             <Container flexDir="column" justify="space-around">
                                 <TextH1 fontS="3.2rem" fontW="700" p=".5rem 0" col="var(--white)">Exclusive suits for men.</TextH1>
                                 <TextP fontS="2rem" fontW="200" p=".5rem 0" col="var(--white)">The clothes don't suit a <br/>man, the man suits <br/> the clothes. </TextP>
-                                <Grid>
+                                <Grid gridColumns="1fr 1fr 1fr" gridColumnsM1="1fr 1fr" gridColumnsM2="1fr">
                                     <Button bg="var(--brickOrange)" fontS="1.9rem" fontW="300" p=".7rem .5rem" m="0 1rem 0 0" col="var(--white)" bgHover="var(--white)" colHover="var(--brickOrange)" mM="0 10% 1% 0" mM2="0 1% 1% 0"><Link href="/suits">Purchase Suits</Link></Button>
                                     <Button bg="var(--white)" fontS="1.9rem" fontW="300" p=".7rem .5rem" col="var(--brickOrange)" bgHover="var(--brickOrange)" colHover="var(--white)" mM="0 10% 1% 0" mM2="0 1% 1% 0"><Link href="/shop">Browse Products</Link></Button>
                                 </Grid>
@@ -62,7 +62,7 @@ const Shop = ({items}) => {
                 <Container flexDir="row" justify="center" p="5% 0 0 0" pM="10% 0 0 0">
                     <TextH1 fontS="2.3rem" fontW="300" col="var(--black)" fontSM="2rem">Recently Added</TextH1>
                 </Container>
-                <Grid p="10%">
+                <Grid p="10%" gridColumns="repeat(3, 1fr)" gridColumnsM1="1fr 1fr" gridColumnsM2="1fr">
                 {items.map((item, id) => (
                     <Item key={id} itemName={item.name} imgSrc={item.headingImages} itemPrice={item.price} id={item.id}></Item>
                 ))}

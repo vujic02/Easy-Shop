@@ -71,14 +71,14 @@ const Article = ({item}) => {
 
 
         <SRLWrapper options={options}>
-            <Grid p="10% 5%">
-                <Container flexDir="column" justify="space-around">
+            <Grid p="10% 5%" gridColumns=".5fr 1.5fr 1fr" gridColumnsM1="1fr 1fr" gridColumnsM2="1fr">
+                <Container className="gallery" flexDir="column" justify="space-around">
                     {item.images && item.images.map((image, index) => (
                         <img key={index} src={image} className="gallery-img" />
                     ))}
                 </Container>
-                <ImgContainer imgSrc={item.headingImages} w="100%" h="47.8vh" m="1% 0 0 0"></ImgContainer>
-                <Container flexDir="column" justify="flex-start" position="relative">
+                <ImgContainer className="container-img" imgSrc={item.headingImages} w="100%" h="47.8vh" m="1% 0 0 0"></ImgContainer>
+                <Container className="item-desc" flexDir="column" justify="flex-start" position="relative">
                     <TextH1 fontS="2.5rem" fontW="500" col="var(--black)" p="0 0 1rem 1rem">{item.name}</TextH1>
                     <TextH1 fontS="2rem" fontW="800" col="var(--black)" p="1rem 0 1rem 1rem">{item.price}€</TextH1>
                     <Container>
@@ -91,7 +91,6 @@ const Article = ({item}) => {
                         <TextP fontS="1.2rem" fontW="300" col="var(--black)" p="1rem 0 1rem 1rem">{item.description}</TextP>
                     </Container>
                 </Container>
-
             </Grid>
             </SRLWrapper>
 

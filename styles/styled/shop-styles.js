@@ -7,7 +7,7 @@ export const Page = styled.section`
 
 export const Grid = styled.div`
     display: grid;
-    grid-template-columns: .5fr 1.5fr 1fr;
+    grid-template-columns: ${({gridColumns}) => gridColumns};
     padding: ${({p}) => p};
     gap: 20px;
 
@@ -21,11 +21,30 @@ export const Grid = styled.div`
     }
 
     @media screen and (max-width: 1366px) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: ${({gridColumnsM1}) => gridColumnsM1};
+        
+        .container-img {
+            order: -1;
+        }
+        .gallery {
+            order: 1;
+        }
+        .item-desc {
+            order: 2;
+        }
     }
 
     @media screen and (max-width: 768px) {
-        grid-template-columns: 1fr;
+        grid-template-columns: ${({gridColumnsM2}) => gridColumnsM2};
+        .container-img {
+            order: 1;
+        }
+        .gallery {
+            order: 2;
+        }
+        .item-desc {
+            order: 3;
+        }
     }
 `
 
