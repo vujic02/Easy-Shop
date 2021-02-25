@@ -26,8 +26,10 @@ export const Grid = styled.div`
         .container-img {
             order: -1;
         }
-        .gallery {
+        .gallery-img {
             order: 1;
+            height: 160px;
+            padding: 8% 0 0 0;
         }
         .item-desc {
             order: 2;
@@ -37,13 +39,14 @@ export const Grid = styled.div`
     @media screen and (max-width: 768px) {
         grid-template-columns: ${({gridColumnsM2}) => gridColumnsM2};
         .container-img {
-            order: 1;
+            order: -1;
         }
-        .gallery {
-            order: 2;
+        .gallery-img {
+            order: 1;
+            height: 320px;
         }
         .item-desc {
-            order: 3;
+            order: 2;
         }
     }
 `
@@ -61,12 +64,22 @@ export const Container = styled.div`
    height: ${({h}) => h};
    width: ${({w}) => w};
    background: ${({bg}) => bg};
+   border-top: ${({borT}) => borT};
+   border-bottom: ${({borB}) => borB};
 
    z-index: 10;
 
+   @media screen and (max-width: 1366px) {
+        justify-content: ${({justifyM}) => justifyM};
+        margin: ${({mM1}) => mM1};
+   }
+
    @media screen and (max-width: 768px) {
         padding: ${({pM}) => pM};
+        margin: ${({mM2}) => mM2};
         flex-direction: ${({flexDirM}) => flexDirM};
+        border-top: ${({borTM}) => borTM};
+        border-bottom: ${({borBM}) => borBM};
    }
 
 
@@ -150,6 +163,10 @@ export const ImgContainer = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    @media screen and (max-width: 1366px) {
+        margin: ${({mM2}) => mM2};
     }
 
     @media screen and (max-width: 768px) {

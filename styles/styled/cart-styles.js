@@ -32,6 +32,9 @@ export const Container = styled.div`
         margin: ${({mM}) => mM};
     }
 
+    @media screen and (max-width: 550px) {
+        width: ${({wSM}) => wSM};
+    }
 `
 
 export const Button = styled.div`
