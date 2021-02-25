@@ -40,7 +40,7 @@ export default function Home() {
         </Container>
       </Grid>
 
-        <Container flexDir="column" flexAlign="center" pos="absolute" bot="0" L="50%" transL="translate(-50%, -50%)">
+        <Container flexDir="row" flexAlign="center" pos="absolute" bot="0" L="50%" transL="translate(-50%, -50%)">
           <Paragraph col="var(--white)"><Link href="/shop">Shop Now</Link></Paragraph>
           <Link href="/shop"><DownArrow src="./images/downArrow.svg" /></Link>
         </Container>

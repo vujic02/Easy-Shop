@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {BsArrowRight} from 'react-icons/bs'
 
 export const HomePage = styled.section`
     overflow: hidden;
@@ -125,11 +126,15 @@ export const LandingImg = styled.img`
     z-index: 5;
 `
 
-export const DownArrow = styled.img`
+export const DownArrow = styled(BsArrowRight)`
     width: 60px;
     height: 60px;
+    margin-top: 5px;
     z-index: 5;
+    color: var(--white);
+    cursor: pointer;
     &:hover {
-        cursor: pointer;
+        transition: ease-in-out all 0.3s;
+        color: var(--lightGray);
     }
 `
