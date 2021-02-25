@@ -4,6 +4,7 @@ import {useAppContext} from '../../context/state';
 import { TextH1, Container, Img, Card, FaceFront, FaceBack, TextP, Button, Input} from '../../styles/styled/cart-styles';
 import Front from '../../components/Front'
 import Back from '../../components/Back'
+import Head from 'next/head'
 
 const Checkout = () => {
 
@@ -36,6 +37,9 @@ const Checkout = () => {
 
     return (
         <Layout>
+            <Head>
+                <title>Easy Shop | Checkout</title>
+            </Head>
             <Container flexDir="row" flexDirM="column">
 
                 <Container flexNum="1" borR="10px" m="0 2% 2% 2%" flexDir="column" justify="space-around" align="flex-start" h="100%" p="2%">
